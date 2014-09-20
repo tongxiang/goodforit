@@ -17,7 +17,8 @@ db.once('open', function callback () {
 
 var userSchema = new Schema({
   splitWiseId: String,
-  splitWiseProfile: {}
+  splitWiseProfile: {},
+  splitWiseHistory: [{}]
 });
 
 var User = mongoose.model('User', userSchema);
