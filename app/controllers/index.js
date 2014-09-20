@@ -6,4 +6,4 @@ var User = require('../models/user')['User'];
 
 module.exports = {
   home: home
-}
+};

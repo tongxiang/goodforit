@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 
 describe('User', function () {
   before(function (done) {
-    require('./helper').clearDb(done)
+    require('./helper').clearDb(done);
   });
 
   it('should have a splitWiseToken field', function (done) {
