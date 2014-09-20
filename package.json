@@ -4,7 +4,8 @@
   "description": "`code the deal` hackathon project",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "start": "nodemon app",
+    "test": "NODE_ENV=test nodemon ./node_modules/.bin/mocha --reporter spec --timeout 10000 test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,12 @@
     "mongoose": "^3.8.16",
     "mongo": "^0.1.0",
     "debug": "^2.0.0",
-    "jade": "^1.7.0"
+    "jade": "^1.7.0",
+    "async": "^0.9.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.0.4",
+    "nodemon": "^1.2.1"
   }
 }
