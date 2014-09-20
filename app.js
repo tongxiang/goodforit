@@ -13,7 +13,6 @@ var mongoStore = require('connect-mongo')({session: session});
 
 var config = require('./config');
 config.walk();
-var swig = require('swig');
 
 var routes = require('./routes/index');
 var users = require('./routes/user');
