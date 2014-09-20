@@ -85,10 +85,19 @@ a:hover {
   float: right;
 }
 
+.span {
+  font-size: 17px;
+}
+
+.floatl {
+  float: left;
+}
+
 /* USER BAR STUFF */
 
 .userbar {
   background: white;
+  margin-bottom: 20px;
 }
 
 .user {
@@ -119,7 +128,9 @@ a:hover {
 .card {
   background: white;
   border: 1px #D4D4D4 solid;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .footer {
