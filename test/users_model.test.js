@@ -1,16 +1,22 @@
 var mongoose = require('mongoose')
   , should = require('should')
-  , User = require('../app/models/user')['User'];
+  , config = require('../config');
 
 describe('User', function () {
+  var User;
+  
   before(function (done) {
-    require('./helper').clearDb(done)
+    config.walk(function(){
+      User = require('../app/models/user')['User']
+      require('./helper').clearDb(done);
+    });
   });
 
-  it('should have a splitWiseToken field', function (done) {
-    var user = new User({splitWiseToken: '12345'});
+  it('should have a splitWiseId and splitWiseProfile field', function (done) {
+    var user = new User({splitWiseId: '12345', splitWiseProfile: {rubbish: 'rubbish'}});
     user.save(function(err, user) {
-      user.splitWiseToken.should.equal('12345');
+      user.splitWiseId.should.equal('12345');
+      user.splitWiseProfile.should.containDeep({ rubbish: 'rubbish' });
       done(err);
     });
   });

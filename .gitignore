@@ -34,3 +34,4 @@ app/components
 lib-cov
 results
 npm-debug.log
+config/local.json
