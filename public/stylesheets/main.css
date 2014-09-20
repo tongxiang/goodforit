@@ -1,16 +1,83 @@
 body {
-  font-family: 'brandon grotesque';
+  font-family: 'brandon-grotesque';
+  background: #F4F4F4;
 }
 
 #header {
   background-color: #39CA74;
+  height: 100px;
 }
 
-h1 {
-  color: red;
-  font-family: 'brandon grotesque';
+h1, h2, h3, h4, h5 {
+  line-height: 1em;
+  font-weight: bold;
 }
 
-#header-logo-text {
+h4 {
+  font-family: "Myriad Pro";
+  font-size: 21px;
+  font-weight: normal;
+}
+
+h1.title {
+  font-family: "Myriad Pro";
+  font-weight: 900;
+  margin: 20px;
   color: white;
+}
+
+h2 {
+  font-size: 72px;
+  line-height: .5em;
+}
+
+h3 {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+h2.value {
+  color: #39CA74;
+}
+
+/* USER BAR STUFF */
+
+.userbar {
+  background: white;
+}
+
+.user {
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.userphoto {
+  float: left;
+  padding-right: 34px;
+}
+
+.userwelcome {
+
+}
+
+.good-shape {
+  color: #39CA74;
+}
+
+.summary {
+  float: left;
+  padding-top: 34px;
+}
+
+/* ACTIVITY STUFF */
+
+.activity {
+  background: white;
+  border: 1px #D4D4D4 solid;
+  padding-bottom: 20px;
+}
+
+.footer {
+  height: 500px;
+  background: white;
 }

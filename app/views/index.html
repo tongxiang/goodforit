@@ -3,10 +3,38 @@
 {% block title %}GoodForIt{% endblock %}
 
 {% block head %}
-  <link rel="stylesheet" href="stylesheets/index.css">
+  <link rel="stylesheet" href="stylesheets/main.css">
 {% endblock %}
 
 {% block content %}
-<h1>Welcome back, Tong!</h1>
-<h3>It looks like you're in <span id="good-shape">good shape.</span></h3>
+<div class="user col-md-8">
+  <img class="userphoto" src="images/Tong.png">
+  <div class="userwelcome">
+    <h1>Welcome back, Tong!</h1>
+    <h4>It looks like you're in <span class="good-shape">good shape.</span></h4>
+  </div>
+</div>
+<div class="summary col-md-3 col-md-offset-1">
+  <h3>Summary</h3>
+  <h2>B+<h2>
+{% endblock %}
+
+{% block activity %}
+<div class="col-md-12 activity">
+    <h1>Activity</h1><hr>
+    <div class="col-md-2">
+      <h3>Transactions<h3>
+      <h2 class="value">72</h2>
+    </div>
+    <div class="col-md-2">
+      <h3>Cash Outflow<h3>
+      <h2 class="value">$1,456</h2>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="col-md-12 footer">
+</div>
 {% endblock %}

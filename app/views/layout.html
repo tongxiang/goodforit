@@ -5,23 +5,37 @@
   <title>{% block title %}GoodForIt{% endblock %}</title>
   <link rel="stylesheet" href="stylesheets/main.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link re="stylesheet" href="webfonts/brandon-webfont-references.css"
+  <link re="stylesheet" href="webfonts/brandon-webfont-references.css">
   <link rel="stylesheet" href="main.css">
+
+  <script src="//use.typekit.net/atz3hax.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
   {% block head %}
-  
+
   {% endblock %}
 </head>
+
 <body>
   <header id="header" class="row container-fluid">
-    <div class="col-xs-24 col-sm-22 col-sm-offset-1"><h1 id="header-logo-text">GoodForIt</h1></div>
+    <div class="col-md-8 col-md-offset-1"><h1 class="title">GoodForIt</h1></div>
   </header>
-  <div class="row responsive-top-margin">
-    <div class="col-xs-24 col-sm-22 col-sm-offset-1 foreground">
+
+  <div class="row responsive-top-margin userbar">
+    <div class="col-md-8 col-md-offset-1 foreground">
       {% block content %}{% endblock %}
     </div>
   </div>
+
+  <div class="row responsive-top-margin">
+    <div class="col-md-10 col-md-offset-1 foreground">
+      {% block activity %}{% endblock %}
+    </div>
+  </div>
+
+  {% block footer %}{% endblock %}
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  {% block content %}{% endblock %}
 </body>
 </html>
