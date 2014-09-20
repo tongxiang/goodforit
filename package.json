@@ -1,0 +1,25 @@
+{
+  "name": "goodforit",
+  "version": "0.0.0",
+  "description": "`code the deal` hackathon project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jihokoo/goodforit"
+  },
+  "keywords": [
+    "hackathon",
+    "trust",
+    "node",
+    "angular"
+  ],
+  "author": "Ji Ho Koo <jihokoo@gmail.com> (http://jihokoo.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jihokoo/goodforit/issues"
+  },
+  "homepage": "https://github.com/jihokoo/goodforit"
+}
