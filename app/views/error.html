@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}404 page not found!{% endblock %}
+
+{% block head %}
+  {% parent %}
+  <link rel="stylesheet" href="custom.css">
+{% endblock %}
+
+{% block content %}
+<p>So sorry, page not found!</p>
+{{error.stack}}
+{% endblock %}

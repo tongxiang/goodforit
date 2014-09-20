@@ -6,14 +6,23 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('test');
 var mongoose = require('mongoose');
+var swig = require('swig');
 
 var routes = require('./routes/index');
 
 var app = express();
 
 // view engine setup
+app.engine('html', swig.renderFile);
+
+app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'app/views'));
-app.set('view engine', 'jade');
+
+// Disabled Swig's template caching, using Express's caching instead. 
+// Turn one on to 'true' in production. 
+app.set('view cache', false);
+swig.setDefaults({ cache: false });
+
 app.set('port', process.env.PORT || 3000);
 
 app.use(favicon());
