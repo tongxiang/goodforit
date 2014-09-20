@@ -1,10 +1,15 @@
 var mongoose = require('mongoose')
   , should = require('should')
-  , User = require('../app/models/user')['User'];
+  , config = require('../config');
 
 describe('User', function () {
+  var User;
+  
   before(function (done) {
-    require('./helper').clearDb(done);
+    config.walk(function(){
+      User = require('../app/models/user')['User']
+      require('./helper').clearDb(done);
+    });
   });
 
   it('should have a splitWiseId and splitWiseProfile field', function (done) {
