@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}GoodForIt{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="stylesheets/index.css">
+{% endblock %}
+
+{% block content %}
+<h1>Welcome back, {{user.splitWiseProfile.user.first_name}}!</h1>
+<h3>It looks like you're in <span id="good-shape">good shape.</span></h3>
+{% endblock %}
