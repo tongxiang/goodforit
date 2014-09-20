@@ -1,4 +1,4 @@
-function walk () {
+function walk (cb) {
   var env = process.env.NODE_ENV || 'dev';
   var use;
   if('dev' == env || 'test' == env){
@@ -9,6 +9,9 @@ function walk () {
   var config = require('./'+use);
   for(var prop in config){
     process.env[prop] = config[prop];
+  }
+  if(cb){
+    cb();
   }
 };
 
