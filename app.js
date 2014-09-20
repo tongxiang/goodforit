@@ -7,9 +7,16 @@ var bodyParser = require('body-parser');
 var debug = require('debug')('test');
 var mongoose = require('mongoose');
 var swig = require('swig');
+var passport = require('passport');
+var session = require('express-session');
+var mongoStore = require('connect-mongo')({session: session});
+
+var config = require('./config');
+config.walk();
 
 var routes = require('./routes/index');
 var users = require('./routes/user');
+var auths = require('./routes/auth');
 
 var app = express();
 
@@ -26,6 +33,22 @@ swig.setDefaults({ cache: false });
 
 app.set('port', process.env.PORT || 3000);
 
+app.use(session({
+  secret: 'keyboard cat',
+  store: new mongoStore({
+    url: process.env.mongoURL,
+    collection: 'sessions'
+  }),
+  proxy: false,
+  cookie: {
+    secure: false,
+    httpOnly: false
+  }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -34,7 +57,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', routes);
-app.use('/auth', users);
+app.use('/auth', auths);
+app.use('/user', users);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

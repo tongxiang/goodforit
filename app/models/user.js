@@ -5,7 +5,7 @@ var db = mongoose.connection;
 var env = process.env.NODE_ENV || 'dev';
 
 if('dev' == env || 'test' == env){
-  mongoose.connect('mongodb://localhost/goodforit');
+  mongoose.connect(process.env.mongoURL);
 } else if('prod' == env){
   // mongoose.connect()
 }
@@ -16,7 +16,8 @@ db.once('open', function callback () {
 });
 
 var userSchema = new Schema({
-  splitWiseToken: String
+  splitWiseId: String,
+  splitWiseProfile: {}
 });
 
 var User = mongoose.model('User', userSchema);

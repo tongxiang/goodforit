@@ -135,7 +135,7 @@ Strategy.prototype.authenticate = function(req, options) {
  * @api protected
  */
 Strategy.prototype.userProfile = function(token, tokenSecret, params, done) {
-  var url = 'https://api.splitwise.com/v1/people/~:(id,first-name,last-name)?format=json';
+  var url = 'https://secure.splitwise.com/api/v3.0/get_current_user';
   if (this._profileFields) {
     var fields = this._convertProfileFields(this._profileFields);
     url = 'https://api.splitwise.com/v1/people/~:(' + fields + ')?format=json';
@@ -146,13 +146,14 @@ Strategy.prototype.userProfile = function(token, tokenSecret, params, done) {
     
     try {
       var json = JSON.parse(body);
-      
+      json.token = token;
+      json.tokenSecret = tokenSecret;
       var profile = { provider: 'splitwise' };
-      profile.id = json.id;
-      profile.displayName = json.firstName + ' ' + json.lastName;
-      profile.name = { familyName: json.lastName,
-                       givenName: json.firstName };
-      if (json.emailAddress) { profile.emails = [{ value: json.emailAddress }]; }
+      profile.id = json.user.id;
+      profile.displayName = json.user.first_name + ' ' + json.user.last_name;
+      profile.name = { familyName: json.user.last_name,
+                       givenName: json.user.first_name };
+      if (json.user.email) { profile.email = json.user.email }
       
       profile._raw = body;
       profile._json = json;
