@@ -73,6 +73,10 @@ a:hover {
   /*outline: 50px white solid;*/
 }
 
+.item {
+  padding-bottom: 20px;
+}
+
 .row {
   padding-bottom: 20px;
 }
