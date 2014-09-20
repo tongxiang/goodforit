@@ -41,8 +41,8 @@ passport.use(new SplitWiseStrategy({
           return done(err, user);
         });
       } else {
-        user.splitwiseProfile = profile._json
-        user.save(function(err) {
+        user.splitWiseProfile = profile._json
+        user.save(function(err, user) {
           return done(err, user);
         });
       }
