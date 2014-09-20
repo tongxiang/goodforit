@@ -26,6 +26,10 @@ h1.title {
   color: white;
 }
 
+h1 {
+  font-size: 30px;
+}
+
 h2 {
   font-size: 72px;
   line-height: .5em;
@@ -38,6 +42,43 @@ h3 {
 
 h2.value {
   color: #39CA74;
+}
+
+a:link, a:visited {
+ color: #39CA74;
+ text-transform: uppercase;
+ font-family: "brandon-grotesque";
+ font-weight: bold;
+ font-size: 17px;
+}
+
+a:hover {
+  color: #39CA74;
+}
+
+.grade {
+  position: absolute;
+  right: 0;
+  top: 0;
+  float: right;
+  width: 100px;
+  height: 100px;
+  background: #39CA74;
+  color: white;
+  text-align: center;
+  font-family: "brandon-grotesque";
+  font-size: 72px;
+  font-weight: bold;
+
+  /*outline: 50px white solid;*/
+}
+
+.row {
+  padding-bottom: 20px;
+}
+
+.morelink {
+  float: right;
 }
 
 /* USER BAR STUFF */
@@ -71,7 +112,7 @@ h2.value {
 
 /* ACTIVITY STUFF */
 
-.activity {
+.card {
   background: white;
   border: 1px #D4D4D4 solid;
   padding-bottom: 20px;
