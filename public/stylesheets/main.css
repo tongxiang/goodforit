@@ -1,0 +1,16 @@
+body {
+  font-family: 'brandon grotesque';
+}
+
+#header {
+  background-color: #39CA74;
+}
+
+h1 {
+  color: red;
+  font-family: 'brandon grotesque';
+}
+
+#header-logo-text {
+  color: white;
+}
