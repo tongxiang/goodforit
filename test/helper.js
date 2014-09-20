@@ -10,7 +10,7 @@ var mongoose = require('mongoose')
 exports.clearDb = function (done) {
   async.parallel([
     function (cb) {
-      User.collection.remove(cb)
+      User.collection.remove(cb);
     }
   ], done)
-}
+};
