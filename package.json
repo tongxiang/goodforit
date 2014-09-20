@@ -21,5 +21,17 @@
   "bugs": {
     "url": "https://github.com/jihokoo/goodforit/issues"
   },
-  "homepage": "https://github.com/jihokoo/goodforit"
+  "homepage": "https://github.com/jihokoo/goodforit",
+  "dependencies": {
+    "path": "^0.4.9",
+    "static-favicon": "^2.0.0-alpha",
+    "cookie-parser": "^1.3.3",
+    "morgan": "^1.3.1",
+    "express": "^4.9.4",
+    "body-parser": "^1.8.3",
+    "mongoose": "^3.8.16",
+    "mongo": "^0.1.0",
+    "debug": "^2.0.0",
+    "jade": "^1.7.0"
+  }
 }
