@@ -5,8 +5,7 @@ var async = require('async');
 function getOne (req, res){
   if(req.user){
     getExpenses(req.user, function(err, user){
-      res.render('report', { user: user });
-      console.log('**USER**', user)
+      res.render('index', { user: user });
     });
   } else{
     res.redirect('/error');
