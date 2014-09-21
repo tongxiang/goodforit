@@ -7,7 +7,7 @@ var env = process.env.NODE_ENV || 'dev';
 if('dev' == env || 'test' == env){
   mongoose.connect(process.env.mongoURL);
 } else if('prod' == env){
-  // mongoose.connect()
+  mongoose.connect(process.env.mongoURL);
 }
 
 db.on('error', console.error.bind(console, 'connection error:'));
