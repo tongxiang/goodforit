@@ -16,9 +16,13 @@ db.once('open', function callback () {
 });
 
 var userSchema = new Schema({
+  email: String,
   splitWiseId: String,
   splitWiseProfile: {},
-  splitWiseHistory: [{}]
+  splitWiseHistory: [{}],
+  venmoId: String,
+  venmoProfile: {},
+  venmoHistory: [{}]
 });
 
 var User = mongoose.model('User', userSchema);
