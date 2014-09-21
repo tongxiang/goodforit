@@ -57,7 +57,7 @@ router.get('/splitwise/callback',
   passport.authenticate('splitwise', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/user');
+    res.redirect('/home');
   });
 
 module.exports = router;
