@@ -20,13 +20,13 @@ var userSchema = new Schema({
   splitWiseId: String,
   splitWiseProfile: {},
   splitWiseHistory: [{}],
+  venmoId: String,
+  venmoProfile: {},
+  venmoHistory: [{}],
   activity: {}, // Cash outflow per unit of time.
   reliability: {}, // However quickly rates have been How quickly debts have been resolved * length of credit history. 
   responsibility: 0, // Decimal of 1. Percentage of debts repaid. 
   connectedness: 0, // The number of parties the user transacts with, added to by each API call.
-  venmoId: String,
-  venmoProfile: {},
-  venmoHistory: [{}]
 });
 
 var User = mongoose.model('User', userSchema);
