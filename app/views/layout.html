@@ -17,39 +17,11 @@
 </head>
 
 <body>
-  <header id="header" class="row container-fluid">
-    <div class="col-md-8 col-md-offset-1"><h1 class="title">GoodForIt</h1></div>
-  </header>
+  {% block header %}
+  {% endblock %}
 
-  <div class="row responsive-top-margin userbar">
-    <div class="col-md-8 col-md-offset-1 foreground">
-      {% block content %}{% endblock %}
-    </div>
-  </div>
-
-  <div class="row responsive-top-margin">
-    <div class="col-md-10 col-md-offset-1 foreground">
-      {% block activity %}{% endblock %}
-    </div>
-  </div>
-
-  <div class="row responsive-top-margin">
-    <div class="col-md-10 col-md-offset-1 foreground">
-      {% block reliability %}{% endblock %}
-    </div>
-  </div>
-
-  <div class="row responsive-top-margin">
-    <div class="col-md-10 col-md-offset-1 foreground">
-      {% block responsibility %}{% endblock %}
-    </div>
-  </div>
-
-  <div class="row responsive-top-margin">
-    <div class="col-md-10 col-md-offset-1 foreground">
-      {% block connectedness %}{% endblock %}
-    </div>
-  </div>
+  {% block content %}
+  {% endblock %}
 
   {% block footer %}{% endblock %}
 

@@ -1,11 +1,22 @@
 body {
   font-family: 'brandon-grotesque';
   background: #F4F4F4;
+  font-size: 16px;
 }
 
 #header {
   background-color: #39CA74;
   height: 100px;
+}
+
+#header-home {
+  height: 600px;
+  background-image: url("../images/header2.png");
+  background-size: cover;
+}
+
+p {
+  font-family: "Myriad Pro";
 }
 
 h1, h2, h3, h4, h5 {
@@ -69,8 +80,6 @@ a:hover {
   font-family: "brandon-grotesque";
   font-size: 72px;
   font-weight: bold;
-
-  /*outline: 50px white solid;*/
 }
 
 .item {
@@ -78,17 +87,79 @@ a:hover {
 }
 
 .row {
-  padding-bottom: 20px;
+
 }
 
 .morelink {
   float: right;
 }
 
+.span {
+  font-size: 17px;
+}
+
+.floatl {
+  float: left;
+}
+/* LANDING PAGE STUFF */
+
+.callout {
+  text-align: center;
+  color: white;
+  padding-top: 100px;
+  line-height: 4em;
+  font-size: 1.2em;
+}
+
+.signupbar {
+  height: 70px;
+  background: #2B4A38;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.cta {
+  font-size: 30px;
+  padding-right: 10px;
+}
+
+.button {
+  background-color:#39CA74;
+  -webkit-border-top-left-radius:5px;
+  -moz-border-radius-topleft:5px;
+  border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
+  -moz-border-radius-topright:5px;
+  border-top-right-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  -moz-border-radius-bottomright:5px;
+  border-bottom-right-radius:5px;
+  -webkit-border-bottom-left-radius:5px;
+  -moz-border-radius-bottomleft:5px;
+  border-bottom-left-radius:5px;
+  text-indent:0;
+  display:inline-block;
+  height:50px;
+  line-height:55px;
+  width:100px;
+  text-decoration:none;
+  text-align:center;
+}
+
+a.button {
+  color: #fff;
+}
+
+a.button:hover {
+  text-decoration: none;
+}
+
 /* USER BAR STUFF */
 
 .userbar {
   background: white;
+  margin-bottom: 20px;
 }
 
 .user {
@@ -119,7 +190,9 @@ a:hover {
 .card {
   background: white;
   border: 1px #D4D4D4 solid;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 0px;
 }
 
 .footer {

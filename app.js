@@ -57,8 +57,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', routes);
-app.use('/auth', auths);
-app.use('/user', users);
+app.use('/auth', auths); // Route which handles authentication. 
+app.use('/user', users); // Original route which handled the Splitwise expense API call. Now unused.
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
