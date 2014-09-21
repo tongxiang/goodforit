@@ -10,7 +10,9 @@
   <header id="header-home" class="row container-fluid animated fadeIn">
     <div class="col-md-8 col-md-offset-1"><h1 class="title">GoodForIt</h1></div>
     <div class="callout col-md-12 animated fadeInUp">
-      <h2>Good For Nomads</h2>
+      <h2 id="goodforX" style="display: inline-block;"></h2>
+      <h2 style="display: inline-block;">&nbsp;Is Good For It</h2>
+      
       <p>Track your payments and debts across your favorite platforms to
 build your reputation.</p>
     </div>
@@ -84,4 +86,16 @@ build your reputation.</p>
 {% block footer %}
 <div class="col-md-12 footer">
 </div>
+<script type="text/javascript">
+  var goodforWhat = ['Chimamanda', 'Abe', 'Gabriéla', 'Ho', 'Sneha', 'Phil', 'Ahmed', 'Phyllis', 'Aaron', 'Noah', 'Sol', 'Eric', 'Yin-Tao', 'David', 'Sarah']
+  var sentinel = 0;
+  $('#goodforX').text(goodforWhat[sentinel%7]);
+  sentinel++
+  setInterval(
+    function(){
+      $('#goodforX').text(goodforWhat[sentinel%7]);
+      $('#goodforX').fadeIn( "slow" );
+      sentinel++
+    }, 2500);
+</script>
 {% endblock %}
