@@ -8,9 +8,9 @@
 
 {% block content %}
 <div class="user col-md-8">
-  <img class="userphoto" src="images/Tong.png">
+  <img class="userphoto" src={{user.splitWiseProfile.user.picture.medium}}>
   <div class="userwelcome">
-    <h1>Welcome back, Tong!</h1>
+    <h1>Welcome back, {{user.splitWiseProfile.user.first_name}}!</h1>
     <h4>It looks like you're in <span class="good-shape">good shape.</span></h4>
   </div>
 </div>
