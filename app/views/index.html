@@ -30,6 +30,10 @@
   </div>
 </div>
 
+<div id="chart1">
+  <svg style="height: 500px;"></svg>
+</div>
+
 <div class="row responsive-top-margin userbar">
   <div class="col-md-10 col-md-offset-1 foreground">
     <div class="col-md-12 activity card">
@@ -155,9 +159,110 @@
   </div>
 </div>
 
+
 {% endblock %}
 
 {% block footer %}
 <div class="col-md-12 footer">
 </div>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/javascripts/nv.d3.min.js"></script>
+  <script type="text/javascript">
+
+  // x axis should be month
+  // y axis should be amount
+
+  // for splitwise date, cost
+  // for venmo date_created, amount
+
+  // the formatting should be an array of the number of streams
+  // each stream is an object that has property key of the stream, and value which is an array of all the values
+  // each element of the value data has an x and y property
+  </script>
+  <script type="text/javascript">
+  var user = {{user|json_encode|raw}}
+
+  var transactionHistory = [formatSplitWiseHistory(user), formatVenmoHistory(user)];
+  console.log('transactions', transactionHistory);
+  function formatSplitWiseHistory (user){
+    var data = { key: 'Splitwise', values: [] };
+    user.splitWiseHistory.forEach(function(element){
+      if((new Date().getUTCMilliseconds() - (86400000*30)) <= new Date(element.date).getUTCMilliseconds()) {
+        data.values.push({
+          x: new Date(element.date).getDate(),
+          y: element.cost
+        });
+      }
+    });
+    return data;
+  };
+
+  function formatVenmoHistory (user){
+    var data = { key: 'Venmo', values: [] };
+    user.venmoHistory.forEach(function(element){
+      if((new Date().getUTCMilliseconds() - (86400000*30)) <= new Date(element.date_created).getUTCMilliseconds()) {
+      data.values.push({
+        x: (new Date(element.date_created).getDate()),
+        y: element.amount
+      });
+    }
+    });
+    return data;
+  };
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart()
+      .transitionDuration(350)
+      .rotateLabels(0)      //Angle to rotate x-axis labels.
+      .showControls(true)   //Allow user to switch between 'Grouped' and 'Stacked' mode.
+      .groupSpacing(0.1)    //Distance between each group of bars.
+    ;
+
+    chart.xAxis
+        .tickFormat(d3.format(',f'));
+
+    chart.yAxis
+        .tickFormat(d3.format(',.1f'));
+
+    d3.select('#chart1 svg')
+        .datum(transactionHistory)
+        .call(chart);
+
+    nv.utils.windowResize(chart.update);
+    console.log(exampleData());
+    console.log('stream lyaers', stream_layers(3,10+Math.random()*100,.1))
+    return chart;
+});
+
+//Generate some nice data.
+function exampleData() {
+  return stream_layers(3,10+Math.random()*100,.1).map(function(data, i) {
+    return {
+      key: 'Stream #' + i,
+      values: data
+    };
+  });
+}
+
+function stream_layers(n, m, o) {
+  if (arguments.length < 3) o = 0;
+  function bump(a) {
+    var x = 1 / (.1 + Math.random()),
+        y = 2 * Math.random() - .5,
+        z = 10 / (.1 + Math.random());
+    for (var i = 0; i < m; i++) {
+      var w = (i / m - y) * z;
+      a[i] += x * Math.exp(-w * w);
+    }
+  }
+  return d3.range(n).map(function() {
+      var a = [], i;
+      for (i = 0; i < m; i++) a[i] = o + o * Math.random();
+      for (i = 0; i < 5; i++) bump(a);
+      return a.map(stream_index);
+    });
+} 
+function stream_index(d, i) {
+  return {x: i, y: Math.max(0, d)};
+} 
+</script>
 {% endblock %}
