@@ -18,7 +18,11 @@ db.once('open', function callback () {
 var userSchema = new Schema({
   splitWiseId: String,
   splitWiseProfile: {},
-  splitWiseHistory: [{}]
+  splitWiseHistory: [{}],
+  activity: {}, // Cash outflow per unit of time.
+  reliability: {}, // However quickly rates have been How quickly debts have been resolved * length of credit history. 
+  responsibility: 0, // Decimal of 1. Percentage of debts repaid. 
+  connectedness: 0 // The number of parties the user transacts with, added to by each API call.
 });
 
 var User = mongoose.model('User', userSchema);
