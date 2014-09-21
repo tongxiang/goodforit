@@ -43,6 +43,7 @@ passport.use(new SplitWiseStrategy({
           return done(err, user);
         });
       } else {
+        user.splitWiseId = profile.id;
         user.email = profile.email;
         user.splitWiseProfile = profile._json;
         user.save(function(err, user) {
