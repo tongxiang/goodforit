@@ -5,6 +5,18 @@ var async = require('async');
 function getOne (req, res){
   if(req.user){
     getExpenses(req.user, function(err, user){
+      user.cashFlow = 0;
+      if(user.splitWiseHistory){
+        user.splitWiseHistory.forEach(function(element){
+          user.cashFlow += parseFloat(element.cost);
+        });
+      }
+      if(user.venmoHistory){
+        user.venmoHistory.forEach(function(element){
+          user.cashFlow += parseFloat(element.amount);
+        })
+      }
+      user.cashFlow = Math.round(user.cashFlow * 100) / 100
       res.render('index', { user: user });
     });
   } else{
@@ -25,6 +37,9 @@ function getExpenses (user, cb){
         token: user.splitWiseProfile.token,
         token_secret: user.splitWiseProfile.tokenSecret
       },
+      qs: {
+        dated_after: new Date().getUTCMilliseconds() - (86400000*30)
+      },
       json: true
     };
     parallelFunctions.push(
@@ -40,7 +55,8 @@ function getExpenses (user, cb){
       url: 'https://api.venmo.com/v1/payments',
       qs: {
         access_token: user.venmoProfile.accessToken,
-        limit: 50
+        limit: 50,
+        after: new Date().getUTCMilliseconds() - (86400000*30)
       },
       json: true
     };
@@ -60,11 +76,14 @@ function getExpenses (user, cb){
       results.forEach(function(element){
         if(element.splitwise){
           user.splitWiseHistory = element.splitwise;
+          user.transactionHistory += user.splitWiseHistory.length;
         } else if(element.venmo){
           user.venmoHistory = element.venmo;
+          user.transactionHistory += user.venmoHistory.length;
         }
       });
       user.save(function(err, user){
+
         cb(err, user);
       });
     });

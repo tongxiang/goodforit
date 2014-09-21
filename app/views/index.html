@@ -91,12 +91,12 @@ reputation or use your score to get credit.</p>
       <div class="row">
         <div class="col-md-2 item">
           <h3>Transactions<h3>
-          <h2 class="value">72</h2>
+          <h2 class="value">{{user.venmoHistory.length + user.splitWiseHistory.length}}</h2>
         </div>
 
         <div class="col-md-2 item">
           <h3>Cash Outflow<h3>
-          <h2 class="value">$1,456</h2>
+          <h2 class="value">{{user.cashFlow}}</h2>
         </div>
       </div>
 
@@ -240,12 +240,10 @@ reputation or use your score to get credit.</p>
   function formatSplitWiseHistory (user){
     var data = { key: 'Splitwise', values: [] };
     user.splitWiseHistory.forEach(function(element){
-      if((new Date().getUTCMilliseconds() - (86400000*30)) <= new Date(element.date).getUTCMilliseconds()) {
         data.values.push({
           x: new Date(element.date).getDate(),
           y: element.cost
         });
-      }
     });
     return data;
   };
@@ -253,12 +251,10 @@ reputation or use your score to get credit.</p>
   function formatVenmoHistory (user){
     var data = { key: 'Venmo', values: [] };
     user.venmoHistory.forEach(function(element){
-      if((new Date().getUTCMilliseconds() - (86400000*30)) <= new Date(element.date_created).getUTCMilliseconds()) {
       data.values.push({
         x: (new Date(element.date_created).getDate()),
         y: element.amount
       });
-    }
     });
     return data;
   };
