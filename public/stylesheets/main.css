@@ -56,6 +56,10 @@ h2.value {
   color: #39CA74;
 }
 
+p.value {
+  color: #39CA74;
+}
+
 a:link, a:visited {
  color: #39CA74;
  text-transform: uppercase;
@@ -125,7 +129,7 @@ a:hover {
   background: #2B4A38;
   color: white;
   text-align: center;
-  padding-top: 10px;
+  padding: 10px 0;
 }
 
 .cta {
@@ -200,7 +204,9 @@ ul.logos li img{
 .userphoto {
   float: left;
   padding-right: 34px;
+  border-radius: 1%;
   width: 150px;
+  height: 100%;
 }
 
 .userwelcome {
@@ -234,4 +240,17 @@ ul.logos li img{
 
 .footer {
   height: 100px;
+}
+
+.nv-bar.positive, .nv-bar.positive:hover {
+  fill: #39CA74 !important;
+}
+
+.nv-legend-symbol {
+  fill: #39CA74 !important;
+  stroke: #39CA74 !important;
+}
+
+.tick text {
+  opacity: 0 !important;
 }

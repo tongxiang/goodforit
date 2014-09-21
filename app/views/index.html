@@ -32,6 +32,7 @@
     <div class="userwelcome">
       <h1>Welcome back, {{user.splitWiseProfile.user.first_name}}!</h1>
       <h4>It looks like you're in <span class="good-shape">good shape.</span></h4>
+      <p class='value'>Last 30 Days</p>
     </div>
   </div>
 
@@ -92,7 +93,7 @@ reputation or use your score to get credit.</p>
 
         <div class="col-md-2 item">
           <h3>Cash Outflow<h3>
-          <h2 class="value">{{user.cashFlow}}</h2>
+          <h2 class="value">${{user.cashFlow}}</h2>
         </div>
       </div>
 
