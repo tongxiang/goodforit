@@ -7,7 +7,7 @@ function walk (cb) {
     for(var prop in config){
       process.env[prop] = config[prop];
     }
-  } else if('prod' == env){
+  } else if('production' == env){
     use = 'production';
   }
   if(cb){

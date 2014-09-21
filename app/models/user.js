@@ -6,7 +6,7 @@ var env = process.env.NODE_ENV || 'dev';
 
 if('dev' == env || 'test' == env){
   mongoose.connect(process.env.mongoURL);
-} else if('prod' == env){
+} else if('production' == env){
   mongoose.connect(process.env.mongoURL);
 }
 
