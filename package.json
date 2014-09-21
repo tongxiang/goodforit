@@ -44,11 +44,16 @@
     "passport": "^0.2.1",
     "mongo-connect": "0.0.6",
     "request": "^2.44.0",
-    "passport-venmo": "0.0.1"
+    "passport-venmo": "0.0.1",
+    "nodemon": "^1.2.1"
   },
   "devDependencies": {
     "mocha": "^1.21.4",
     "should": "^4.0.4",
     "nodemon": "^1.2.1"
+  },
+  "subdomain": "goodforit",
+  "engines": {
+    "node": "0.10.x"
   }
 }
