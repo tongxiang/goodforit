@@ -12,7 +12,6 @@ var session = require('express-session');
 var mongoStore = require('connect-mongo')({session: session});
 
 var config = require('./config');
-config.walk();
 
 var routes = require('./routes/index');
 var users = require('./routes/user');
