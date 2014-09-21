@@ -18,10 +18,10 @@
   <div class="user col-md-8 col-md-offset-1 animated fadeIn">
     {% if user.paypalId %}
       <img class="userphoto" src="images/Tong.png">
+    {% elseif user.splitWiseId %}
+      <img class="userphoto" src={{user.splitWiseProfile.user.picture.large}}>
     {% elseif user.venmoId %}
       <img class="userphoto" src={{user.venmoProfile.profile_picture_url}}>
-    {% elseif user.splitWiseId %}
-      <img class="userphoto" src={{user.splitWiseProfile.user.picture.small}}>
     {% elseif user.squareId %}
       <img class="userphoto" src="images/Tong.png">
     {% elseif user.levelUpId %}
