@@ -52,30 +52,26 @@
 reputation or use your score to get credit.</p>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-6">
     <h1></h1>
     {% if !user.paypalId %}
-      <a href="/auth/venmo" class="button">Add your Paypal account</a>
+      <a href="#" class="button">Add Paypal</a>
     {% endif %}
     {% if !user.venmoId %}
-      <a href="/auth/venmo" class="button">Add your Venmo account</a>
+      <a href="/auth/venmo" class="button">Add Venmo</a>
     {% endif %}
     {% if !user.splitWiseId %}
-      <a href="/auth/venmo" class="button">Add your splitWise account</a>
+      <a href="/auth/splitwise" class="button">Add splitWise</a>
     {% endif %}
     {% if !user.squareId %}
-      <a href="/auth/venmo" class="button">Add your Square account</a>
+      <a href="#" class="button">Add Square</a>
     {% endif %}
     {% if !user.levelUpId %}
-      <a href="/auth/venmo" class="button">Add your LevelUp account</a>
+      <a href="#" class="button">Add LevelUp</a>
     {% endif %}
   </div>
 
   </div>
-</div>
-
-<div id="chart1">
-  <svg style="height: 500px;"></svg>
 </div>
 
 <div class="row responsive-top-margin">
@@ -100,8 +96,8 @@ reputation or use your score to get credit.</p>
         </div>
       </div>
 
-      <div class="row">
-        <img class="col-md-10 push" src="images/activity.png">
+      <div id="chart1" class="row">
+        <svg style="height: 500px;"></svg>
       </div>
 
       <hr>
@@ -309,9 +305,9 @@ function stream_layers(n, m, o) {
       for (i = 0; i < 5; i++) bump(a);
       return a.map(stream_index);
     });
-} 
+}
 function stream_index(d, i) {
   return {x: i, y: Math.max(0, d)};
-} 
+}
 </script>
 {% endblock %}
