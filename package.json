@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jihokoo/goodforit"
+    "url": "https://github.com/tongxiang/goodforit"
   },
   "keywords": [
     "hackathon",
@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/jihokoo/goodforit/issues"
   },
-  "homepage": "https://github.com/jihokoo/goodforit",
+  "homepage": "https://github.com/tongxiang/goodforit",
   "dependencies": {
     "async": "^0.9.0",
     "body-parser": "^1.8.3",
