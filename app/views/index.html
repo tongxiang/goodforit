@@ -55,27 +55,23 @@ reputation or use your score to get credit.</p>
   <div class="col-md-6">
     <h1></h1>
     {% if !user.paypalId %}
-      <a href="/auth/venmo" class="button">Add Paypal</a>
+      <a href="#" class="button">Add Paypal</a>
     {% endif %}
     {% if !user.venmoId %}
       <a href="/auth/venmo" class="button">Add Venmo</a>
     {% endif %}
     {% if !user.splitWiseId %}
-      <a href="/auth/venmo" class="button">Add splitWise</a>
+      <a href="/auth/splitwise" class="button">Add splitWise</a>
     {% endif %}
     {% if !user.squareId %}
-      <a href="/auth/venmo" class="button">Add Square</a>
+      <a href="#" class="button">Add Square</a>
     {% endif %}
     {% if !user.levelUpId %}
-      <a href="/auth/venmo" class="button">Add LevelUp</a>
+      <a href="#" class="button">Add LevelUp</a>
     {% endif %}
   </div>
 
   </div>
-</div>
-
-<div id="chart1">
-  <svg style="height: 500px;"></svg>
 </div>
 
 <div class="row responsive-top-margin">
@@ -100,8 +96,8 @@ reputation or use your score to get credit.</p>
         </div>
       </div>
 
-      <div class="row">
-        <img class="col-md-10 push" src="images/activity.png">
+      <div id="chart1" class="row">
+        <svg style="height: 500px;"></svg>
       </div>
 
       <hr>
