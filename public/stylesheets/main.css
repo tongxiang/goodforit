@@ -56,6 +56,10 @@ h2.value {
   color: #39CA74;
 }
 
+p.value {
+  color: #39CA74;
+}
+
 a:link, a:visited {
  color: #39CA74;
  text-transform: uppercase;
@@ -245,4 +249,8 @@ ul.logos li img{
 .nv-legend-symbol {
   fill: #39CA74 !important;
   stroke: #39CA74 !important;
+}
+
+.tick text {
+  opacity: 0 !important;
 }
