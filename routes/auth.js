@@ -111,7 +111,7 @@ router.get('/venmo/callback',
     failureRedirect: '/'
   }),
   function(req, res) {
-    res.redirect('/user');
+    res.redirect('/home');
   }); 
 
 module.exports = router;
