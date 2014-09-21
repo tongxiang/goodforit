@@ -6,7 +6,7 @@ body {
 
 #header {
   background-color: #39CA74;
-  height: 100px;
+  height: 70px;
 }
 
 #header-home {
@@ -34,6 +34,7 @@ h1.title {
   font-family: "Myriad Pro";
   font-weight: 900;
   margin: 20px;
+  margin-left: 0;
   color: white;
 }
 
