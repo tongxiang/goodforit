@@ -154,6 +154,7 @@ a:hover {
   text-decoration:none;
   text-align:center;
   padding: 0 10px;
+  margin: 10px;
 }
 
 a.button {
@@ -199,6 +200,7 @@ ul.logos li img{
 .userphoto {
   float: left;
   padding-right: 34px;
+  width: 150px;
 }
 
 .userwelcome {
