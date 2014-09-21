@@ -91,6 +91,10 @@ a:hover {
 
 }
 
+.push {
+  margin-top: 20px;
+}
+
 .morelink {
   float: right;
 }
@@ -101,6 +105,10 @@ a:hover {
 
 .floatl {
   float: left;
+}
+
+.floatr {
+  float: right;
 }
 /* LANDING PAGE STUFF */
 
@@ -181,7 +189,6 @@ ul.logos li img{
 
 .userbar {
   background: white;
-  margin-bottom: 20px;
 }
 
 .user {
@@ -205,6 +212,12 @@ ul.logos li img{
 .summary {
   float: left;
   padding-top: 34px;
+}
+
+.accountbar {
+  background: #2B4A38;
+  color: white;
+  padding: 15px 0;
 }
 
 /* ACTIVITY STUFF */

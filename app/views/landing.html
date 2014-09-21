@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block header %}
-  <header id="header-home" class="row container-fluid">
+  <header id="header-home" class="row container-fluid animated fadeIn">
     <div class="col-md-8 col-md-offset-1"><h1 class="title">GoodForIt</h1></div>
-    <div class="callout col-md-12">
+    <div class="callout col-md-12 animated fadeInUp">
       <h2>Good For Coffee</h2>
       <p>Track your payments and debts across your favorite platforms to
 build your reputation.</p>
@@ -18,7 +18,8 @@ build your reputation.</p>
 {% endblock %}
 
 {% block content %}
-    <div class="signupbar"><span class="cta">Get your report for free.</span>
+    <div class="signupbar animated fadeIn">
+    <span class="cta">Get your report for free.</span>
     <a href="/auth/venmo" class="button">Sign Up with Venmo</a>
     <a href="/auth/splitwise" class="button">Sign Up with Splitwise</a>
     </div>
