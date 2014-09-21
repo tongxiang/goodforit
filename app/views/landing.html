@@ -13,8 +13,7 @@
       <h2 id="goodforX" style="display: inline-block;"></h2>
       <h2 style="display: inline-block;">&nbsp;Is Good For It</h2>
       
-      <p>Track your payments and debts across your favorite platforms to
-build your reputation.</p>
+      <p>Measure your creditworthiness through your favorite payment applications.</p>
     </div>
   </header>
 {% endblock %}
@@ -37,9 +36,9 @@ build your reputation.</p>
 
       <div class="row">
         <div class="col-md-8 item">
-          <p>GoodForIt determines someone’s credit risk through their usage history of payment and lending apps like Venmo, Paypal, and Splitwise. Not only can we provide a new market of creditworthy users for financial service providers, we can also provide more access to financial services for people traditionally underserved by them.</p>
+          <p>GoodForIt determines a consumer's credit risk through their usage history of payment and lending applications like Venmo, Paypal, and Splitwise. Our risk model parses the user's transactional history to determine how users respond to debt.</p>
 
-          <p>We’ve integrated two lending apps—Splitwise and Venmo, which are both pretty effective measurements of whether or not an individual pays off debt, and how quickly. </p>
+          <p></p>
 
         </div>
         <div class="col-md-4">
@@ -53,7 +52,7 @@ build your reputation.</p>
     </div>
 
     <div class="col-md-12 row">
-      <h3 class="banks">Our banking partners</h3>
+      <h3 class="banks">Our Financial Services Partners</h3>
       <ul class="logos">
           <li><img src="images/logos/chase.png"></li>
           <li><img src="images/logos/pnc.png"></li>
@@ -75,7 +74,7 @@ build your reputation.</p>
 
       <div class="row">
         <div class="col-md-8 item">
-          <p>Our system uses secure API calls to make sure that your transactional data is safe. We don't retreive any information about your credit cards, addresses or bank balances.</p>
+          <p>Our system will only receive access to the history your financial transactions, not to the financial credentials to make transactions on your behalf.</p>
         </div>
       </div>
     </div>
@@ -93,8 +92,8 @@ build your reputation.</p>
   sentinel++
   setInterval(
     function(){
+      $('#goodforX').addClass('animated fadeIn');
       $('#goodforX').text(goodforWhat[sentinel%7]);
-      $('#goodforX').fadeIn( "slow" );
       sentinel++
     }, 2500);
 </script>
