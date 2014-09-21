@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block header %}
-  <header id="header-home" class="row container-fluid">
+  <header id="header-home" class="row container-fluid animated fadeIn">
     <div class="col-md-8 col-md-offset-1"><h1 class="title">GoodForIt</h1></div>
-    <div class="callout col-md-12">
+    <div class="callout col-md-12 animated fadeInUp">
       <h2>Good For Coffee</h2>
       <p>Track your payments and debts across your favorite platforms to
 build your reputation.</p>
@@ -18,14 +18,15 @@ build your reputation.</p>
 {% endblock %}
 
 {% block content %}
-    <div class="signupbar"><span class="cta">Get your report for free.</span>
+    <div class="signupbar animated fadeIn">
+    <span class="cta">Get your report for free.</span>
     <a href="/auth/venmo" class="button">Sign Up with Venmo</a>
     <a href="/auth/splitwise" class="button">Sign Up with Splitwise</a>
     </div>
 
 <div class="row responsive-top-margin">
   <div class="col-md-10 col-md-offset-1 foreground">
-    <div class="col-md-12 activity card">
+    <div class="col-md-12 activity card row">
       <div class="titlerow">
         <h1 class="">What is GoodForIt?</h1>
       </div>
@@ -37,15 +38,30 @@ build your reputation.</p>
           <p>Lorem lean startup ipsum product market fit customer development acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck. Social bookmarking group buying crowded market pivot onboarding freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic investor. Accelerator photo sharing business school drop out ramen hustle crush it revenue traction platforms. Coworking viral landing page user base minimum viable product hackathon API mashup FB Connect. Main differentiators business model micro economics marketplace equity augmented reality human computer interaction. Board members super angel preferred stock. Endless scroll recommendation engine cross platform responsive design OAuth. </p>
         </div>
         <div class="col-md-4">
-          <img src="images/logos/chase.png">
+          <ul class="logos">
+            <li><img src="images/logos/venmo.png"></li>
+            <li><img src="images/logos/split.png"></li>
+            <li><img src="images/logos/paypal.png"></li>
+          </ul>
+        </div>
       </div>
+    </div>
+
+    <div class="col-md-12 row">
+      <h3 class="banks">Our banking partners</h3>
+      <ul class="logos">
+          <li><img src="images/logos/chase.png"></li>
+          <li><img src="images/logos/pnc.png"></li>
+          <li><img src="images/logos/bankofamerica.png"></li>
+          <li><img src="images/logos/citi.png"></li>
+      </ul>
     </div>
   </div>
 </div>
 
 <div class="row responsive-top-margin">
   <div class="col-md-10 col-md-offset-1 foreground">
-    <div class="col-md-12 activity card">
+    <div class="col-md-12 activity card row">
       <div class="titlerow">
         <h1 class="">Security Jargon</h1>
       </div>
@@ -59,5 +75,10 @@ build your reputation.</p>
       </div>
     </div>
   </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="col-md-12 footer">
 </div>
 {% endblock %}

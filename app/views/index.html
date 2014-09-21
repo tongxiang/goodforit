@@ -3,7 +3,6 @@
 {% block title %}GoodForIt{% endblock %}
 
 {% block head %}
-  <link rel="stylesheet" href="stylesheets/main.css">
 {% endblock %}
 
 {% block header %}
@@ -16,17 +15,36 @@
 <div class="row responsive-top-margin userbar">
   <div class="foreground">
 
-<div class="user col-md-8 col-md-offset-1">
-  <img class="userphoto" src="images/Tong.png">
-  <div class="userwelcome">
-    <h1>Welcome back, {{user.splitWiseProfile.user.first_name}}!</h1>
-    <h4>It looks like you're in <span class="good-shape">good shape.</span></h4>
+  <div class="user col-md-8 col-md-offset-1 animated fadeIn">
+    <img class="userphoto" src="images/Tong.png">
+    <div class="userwelcome">
+      <h1>Welcome back, {{user.splitWiseProfile.user.first_name}}!</h1>
+      <h4>It looks like you're in <span class="good-shape">good shape.</span></h4>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="col-md-5 floatl">
+      <h3>Summary</h3>
+      <h2>B+</h2>
+    </div>
+  </div>
   </div>
 </div>
-<div class="summary">
-  <div class="col-md-5 floatl">
-    <h3>Summary</h3>
-    <h2>B+</h2>
+
+<div class="row responsive-top-margin accountbar">
+  <div class="foreground">
+  <div class="col-md-4 col-md-offset-1 animated bounce">
+  <h1>Get more out of your account</h1>
+  <p>Authorize more platforms to build your
+reputation or use your score to get credit.</p>
+  </div>
+
+  <div class="col-md-4">
+    <h1></h1>
+    <a href="/auth/venmo" class="button">Add your Venmo account</a>
+  </div>
+
   </div>
 </div>
 
@@ -34,15 +52,15 @@
   <svg style="height: 500px;"></svg>
 </div>
 
-<div class="row responsive-top-margin userbar">
+<div class="row responsive-top-margin">
   <div class="col-md-10 col-md-offset-1 foreground">
-    <div class="col-md-12 activity card">
+    <div class="col-md-12 activity card animated fadeInUp">
       <div class="titlerow">
         <h1 class="">Activity</h1>
         <span class="grade">B+</span>
       </div>
 
-      <hr>
+      <hr class="col-md-10">
 
       <div class="row">
         <div class="col-md-2 item">
@@ -57,7 +75,7 @@
       </div>
 
       <div class="row">
-        <img class="col-md-10" src="images/activity.png">
+        <img class="col-md-10 push" src="images/activity.png">
       </div>
 
       <hr>
@@ -71,24 +89,29 @@
 
 <div class="row responsive-top-margin">
   <div class="col-md-10 col-md-offset-1 foreground">
-    <div class="col-md-12 reliability card">
+    <div class="col-md-12 reliability card animated fadeInUp">
   <div class="titlerow">
     <h1 class="">Reliability</h1>
     <span class="grade">B</span>
   </div>
 
-  <hr>
+  <hr class="col-md-10">
 
   <div class="row">
-    <div class="col-md-8 item">
-      <h3>Average Debt Period<h3>
+    <div class="col-md-5 item">
+      <h3>Average Debt Period</h3>
       <h2 class="value">2 Days</h2>
     </div>
 
-    <div class="col-md-8 item">
-      <h3>Outstanding Debts<h3>
-      <h2 class="value">$1,456</h2>
+    <div class="row">
+      <img class="col-md-6 push" src="images/transactions.png">
     </div>
+
+    <div class="col-md-5 item">
+      <h3>Outstanding Debts</h3>
+      <h2 class="value">$34.45</h2>
+    </div>
+
   </div>
 
   <hr>
@@ -102,13 +125,13 @@
 
 <div class="row responsive-top-margin">
   <div class="col-md-10 col-md-offset-1 foreground">
-    <div class="col-md-12 responsibility card">
+    <div class="col-md-12 responsibility card animated fadeInUp">
       <div class="titlerow">
         <h1 class="">Responsibility</h1>
         <span class="grade">A+</span>
       </div>
 
-      <hr>
+      <hr class="col-md-10">
 
       <div class="row">
         <div class="col-md-3">
@@ -116,6 +139,10 @@
           <h2 class="value">98.8%</h2>
         </div>
 
+        <div class="col-md-4 item">
+          <img class="push" src="images/responsible_graph.png">
+        </div>
+
       </div>
 
       <hr>
@@ -129,23 +156,25 @@
 
 <div class="row responsive-top-margin">
   <div class="col-md-10 col-md-offset-1 foreground">
-    <div class="col-md-12 connectedness card">
+    <div class="col-md-12 connectedness card animated fadeInUp">
       <div class="titlerow">
         <h1 class="">Connectedness</h1>
-        <div id="chart2">
-          <svg></svg>
-        </div>
-        <span class="grade">B+</span>
+        <span class="grade">C</span>
       </div>
 
-  <hr>
+  <hr class="col-md-10">
 
   <div class="row">
     <div class="col-md-2">
       <h3>Partners</h3>
       <h2 class="value">17</h2>
     </div>
+
+  <div class="col-md-4 item">
+    <img class="push" src="images/connections.png">
   </div>
+
+    </div>
 
   <hr>
 
@@ -156,8 +185,6 @@
   </div>
 </div>
 
-  </div>
-</div>
 
 
 {% endblock %}

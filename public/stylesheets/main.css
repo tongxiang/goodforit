@@ -6,7 +6,7 @@ body {
 
 #header {
   background-color: #39CA74;
-  height: 100px;
+  height: 70px;
 }
 
 #header-home {
@@ -34,6 +34,7 @@ h1.title {
   font-family: "Myriad Pro";
   font-weight: 900;
   margin: 20px;
+  margin-left: 0;
   color: white;
 }
 
@@ -90,6 +91,10 @@ a:hover {
 
 }
 
+.push {
+  margin-top: 20px;
+}
+
 .morelink {
   float: right;
 }
@@ -100,6 +105,10 @@ a:hover {
 
 .floatl {
   float: left;
+}
+
+.floatr {
+  float: right;
 }
 /* LANDING PAGE STUFF */
 
@@ -112,7 +121,7 @@ a:hover {
 }
 
 .signupbar {
-  height: 70px;
+  min-height: 70px;
   background: #2B4A38;
   color: white;
   text-align: center;
@@ -155,11 +164,31 @@ a.button:hover {
   text-decoration: none;
 }
 
+.banks {
+  top: 10px;
+  text-align: center;
+}
+
+ul.logos {
+  text-decoration: none;
+  list-style: none;
+}
+
+ul.logos li {
+  float: left;
+}
+
+ul.logos li img{
+  width: 200px;
+  margin-top:5px;
+  margin-left: 20px;
+}
+
+
 /* USER BAR STUFF */
 
 .userbar {
   background: white;
-  margin-bottom: 20px;
 }
 
 .user {
@@ -185,6 +214,12 @@ a.button:hover {
   padding-top: 34px;
 }
 
+.accountbar {
+  background: #2B4A38;
+  color: white;
+  padding: 15px 0;
+}
+
 /* ACTIVITY STUFF */
 
 .card {
@@ -196,6 +231,5 @@ a.button:hover {
 }
 
 .footer {
-  height: 500px;
-  background: white;
+  height: 100px;
 }
