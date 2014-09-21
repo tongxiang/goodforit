@@ -142,9 +142,9 @@ a:hover {
   display:inline-block;
   height:50px;
   line-height:55px;
-  width:100px;
   text-decoration:none;
   text-align:center;
+  padding: 0 10px;
 }
 
 a.button {
