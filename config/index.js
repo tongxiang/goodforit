@@ -3,12 +3,12 @@ function walk (cb) {
   var use;
   if('dev' == env || 'test' == env){
     use = 'local';
+    var config = require('./'+use);
+    for(var prop in config){
+      process.env[prop] = config[prop];
+    }
   } else if('prod' == env){
     use = 'production';
-  }
-  var config = require('./'+use);
-  for(var prop in config){
-    process.env[prop] = config[prop];
   }
   if(cb){
     cb();

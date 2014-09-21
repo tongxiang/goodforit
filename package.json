@@ -1,10 +1,10 @@
 {
   "name": "goodforit",
-  "version": "0.0.0",
+  "version": "0.0.0-6",
   "description": "`code the deal` hackathon project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app",
+    "start": "node app",
     "test": "NODE_ENV=test nodemon ./node_modules/.bin/mocha --reporter spec --timeout 10000 test/*.test.js"
   },
   "repository": {
