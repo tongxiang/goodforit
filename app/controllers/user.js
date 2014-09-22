@@ -63,6 +63,7 @@ function getExpenses (user, cb){
     parallelFunctions.push(
       function(callback){
         request(venmoOptions, function(err, httpResponse, response){
+          console.log('response', response)
           callback(null, { venmo: response.data });
         })
       }
