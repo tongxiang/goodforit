@@ -72,6 +72,8 @@ function getExpenses (user, cb){
   async.parallel(
     parallelFunctions, 
   function(err, results){
+    console.log('err', err);
+    console.log('results', results);
     User.findOne({_id: user.id}, function(err, user){
       results.forEach(function(element){
         if(element.splitwise){
