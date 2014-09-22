@@ -30,7 +30,11 @@
       <img class="userphoto" src="images/Tong.png">
     {% endif %}
     <div class="userwelcome">
-      <h1>Welcome back, {{user.splitWiseProfile.user.first_name}}!</h1>
+      {% if user.splitWiseProfile %}
+        <h1>Welcome back, {{user.splitWiseProfile.user.first_name}}!</h1>
+      {% elseif user.venmoProfile %}
+        <h1>Welcome back, {{user.venmoProfile.first_name}}!</h1>
+      {% endif %}
       <h4>It looks like you're in <span class="good-shape">good shape.</span></h4>
       <p class='value'>Last 30 Days</p>
     </div>
